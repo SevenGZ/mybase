@@ -12,7 +12,7 @@ import java.util.List;
 
 
 @SpringBootTest
-class MybaseApplicationTests {
+class MyBatisPlusGeneratorTests {
     @Autowired
     MaterialMapper materialMapper;
 
@@ -21,6 +21,6 @@ class MybaseApplicationTests {
         List<Material> materials = materialMapper.selectList(new QueryWrapper<>());
         System.out.println(JSONUtil.toJsonStr(materials));
     }
-    
+
 
 }
