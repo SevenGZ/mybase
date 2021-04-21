@@ -8,6 +8,7 @@ import org.springframework.core.Ordered;
 
 @Configuration
 public class WebConfig {
+
     @Bean
     public FilterRegistrationBean<ControllerFilter> controllerFilter() {
         FilterRegistrationBean<ControllerFilter> filterRegBean = new FilterRegistrationBean<>();

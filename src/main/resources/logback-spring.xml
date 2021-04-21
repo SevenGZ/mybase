@@ -7,7 +7,7 @@
 
     　　<!-- 日志级别 -->
     　　
-    <springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="DEBUG"/>
+    <springProperty scope="context" name="LOG_ROOT_LEVEL" source="logging.level.root" defaultValue="INFO"/>
 
     　　<!-- 标识这个"STDOUT" 将会添加到这个logger -->
     　　
@@ -28,7 +28,7 @@
     　　<!--对日志进行格式化-->
     　　
     <property name="LOG_MSG"
-              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%X{requestUUID}] | [%logger{36}] --> %msg|%n "/>
+              value="[%d{yyyy-MM-dd HH:mm:ss.SSS}] | [%level] | [${HOSTNAME}] | [%thread] | [%X{requestUUID}] | [%logger{36}] --> %msg %n "/>
 
     　　<!--文件大小，默认10MB-->
     　　

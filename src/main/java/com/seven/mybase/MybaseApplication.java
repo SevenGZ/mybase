@@ -10,8 +10,10 @@ public class MybaseApplication {
     private static Logger logger = LoggerFactory.getLogger(MybaseApplication.class);
 
     public static void main(String[] args) {
+        long startTime = System.currentTimeMillis();
         SpringApplication.run(MybaseApplication.class, args);
-        logger.info("项目启动");
+        long endTime = System.currentTimeMillis();
+        logger.info("项目启动,耗时:" + (endTime - startTime));
     }
 
 }
