@@ -7,6 +7,7 @@ import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.InjectionConfig;
 import com.baomidou.mybatisplus.generator.config.*;
 import com.baomidou.mybatisplus.generator.config.po.TableInfo;
+import com.baomidou.mybatisplus.generator.config.rules.DateType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
 
@@ -43,24 +44,26 @@ public class CodeGenerator {
         GlobalConfig gc = new GlobalConfig();
         String projectPath = System.getProperty("user.dir");
         gc.setOutputDir(projectPath + "/src/main/java");
-        gc.setAuthor("jobob");
+        gc.setAuthor("gaozhao");
         gc.setOpen(false);
+        gc.setServiceName("%sService");
+        gc.setDateType(DateType.ONLY_DATE);
         // gc.setSwagger2(true); 实体属性 Swagger2 注解
         mpg.setGlobalConfig(gc);
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/ant?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://write.mysql.goo.com:3306/gag_digital_receipt?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
-        dsc.setUsername("root");
-        dsc.setPassword("密码");
+        dsc.setUsername("root_new");
+        dsc.setPassword("system@123");
         mpg.setDataSource(dsc);
 
         // 包配置
         PackageConfig pc = new PackageConfig();
         pc.setModuleName(scanner("模块名"));
-        pc.setParent("com.baomidou.ant");
+        pc.setParent("com.seven");
         mpg.setPackageInfo(pc);
 
         // 自定义配置
@@ -70,6 +73,7 @@ public class CodeGenerator {
                 // to do nothing
             }
         };
+
 
         // 如果模板引擎是 freemarker
         String templatePath = "/templates/mapper.xml.ftl";
@@ -121,11 +125,11 @@ public class CodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
+//        strategy.setSuperEntityClass("你自己的父类实体,没有就不用设置!");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
         // 公共父类
-        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
+//        strategy.setSuperControllerClass("你自己的父类控制器,没有就不用设置!");
         // 写于父类中的公共字段
         strategy.setSuperEntityColumns("id");
         strategy.setInclude(scanner("表名，多个英文逗号分割").split(","));

@@ -21,6 +21,6 @@ class MybaseApplicationTests {
         List<Material> materials = materialMapper.selectList(new QueryWrapper<>());
         System.out.println(JSONUtil.toJsonStr(materials));
     }
-    
+
 
 }
