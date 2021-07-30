@@ -1,0 +1,18 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    dynamic:
+      primary: datasource_crm #设置默认的数据源或者数据源组,默认值即为master
+      strict: false #严格匹配数据源,默认false. true未匹配到指定数据源时抛异常,false使用默认数据源
+      datasource:
+        datasource_crm:
+          url: jdbc:mysql://write.mysql.goo.com:3306/gag_crm?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+          username: root_new
+          password: system@123
+          driver-class-name: com.mysql.jdbc.Driver # 3.2.0开始支持SPI可省略此配置
+        datasource_digital_receipt:
+          url: jdbc:mysql://write.mysql.goo.com:3306/gag_digital_receipt?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true
+          username: root_new
+          password: system@123
+          driver-class-name: com.mysql.jdbc.Driver

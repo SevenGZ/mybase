@@ -1,28 +1,24 @@
 package com.seven.mybase.entity;
 
-import java.util.Date;
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+import java.io.Serializable;
+import java.util.Date;
+
 /**
  * <p>
- * 
+ *
  * </p>
  *
  * @author gaozhao
- * @since 2021-04-22
+ * @since 2021-07-30
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
 public class Material implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    /**
-     * 素材名称
-     */
-    private String materialName;
 
     /**
      * 素材类型 0-图片，1-视频
@@ -35,9 +31,9 @@ public class Material implements Serializable {
     private String materialUrl;
 
     /**
-     * 机构id
+     * 素材文件名
      */
-    private String shopId;
+    private String materialFileName;
 
     /**
      * 操作人

@@ -29,7 +29,7 @@ public class LogAop {
 
         try {
             String argsStr = args == null ? "" : JSONUtil.toJsonStr(args);
-            log.info(startTime + ",开始调用>>>" + className + "." + methodName + ",入参:" + argsStr);
+            log.info("开始调用>>>" + className + "." + methodName + ",入参:" + argsStr);
         } catch (Throwable e) {
             log.error("打印参数出错", e);
         }
@@ -41,7 +41,7 @@ public class LogAop {
             res = pjp.proceed();
             //TODO 判断参数大小
             String argsStr = res == null ? "" : JSONUtil.toJsonStr(res);
-            log.info(endTime + ",调用结束>>>" + className + "." + methodName + ",结果:" + argsStr + ",耗时:" + (endTime - startTime));
+            log.info("调用结束>>>" + className + "." + methodName + ",结果:" + argsStr + ",耗时:" + (endTime - startTime));
         } catch (Throwable e) {
             log.error("打印参数出错", e);
         }

@@ -53,7 +53,7 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://write.mysql.goo.com:3306/gag_digital_receipt?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");
+        dsc.setUrl("jdbc:mysql://write.mysql.goo.com:3306/gag_crm?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root_new");
