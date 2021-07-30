@@ -1,6 +1,8 @@
 package com.seven.mybase.controller;
 
 
+import com.seven.mybase.common.CommonResponse;
+import com.seven.mybase.common.ResponseCodeEnum;
 import com.seven.mybase.service.BillConfigService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,8 +24,8 @@ public class BillConfigController {
     BillConfigService billConfigService;
 
     @GetMapping("test")
-    public Object test() {
-        return billConfigService.list();
+    public CommonResponse test() {
+        return CommonResponse.builder().code(ResponseCodeEnum.SUCCESS).data(billConfigService.list()).build();
     }
 
 }

@@ -1,6 +1,8 @@
 package com.seven.mybase.controller;
 
 
+import com.seven.mybase.common.CommonResponse;
+import com.seven.mybase.common.ResponseCodeEnum;
 import com.seven.mybase.service.MaterialService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +24,7 @@ public class MaterialController {
     MaterialService materialService;
 
     @GetMapping("test")
-    public Object test() {
-        return materialService.list();
+    public CommonResponse test() {
+        return CommonResponse.builder().code(ResponseCodeEnum.SUCCESS).data(materialService.list()).build();
     }
 }
