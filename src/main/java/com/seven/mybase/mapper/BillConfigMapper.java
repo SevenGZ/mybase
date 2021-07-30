@@ -1,7 +1,8 @@
 package com.seven.mybase.mapper;
 
-import com.seven.mybase.entity.BillConfig;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.seven.mybase.entity.BillConfig;
+import org.apache.ibatis.annotations.Mapper;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author gaozhao
  * @since 2021-07-30
  */
+@Mapper
 public interface BillConfigMapper extends BaseMapper<BillConfig> {
 
 }
