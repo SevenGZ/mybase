@@ -28,4 +28,13 @@ public class BillConfigController {
         return CommonResponse.builder().code(ResponseCodeEnum.SUCCESS).data(billConfigService.list()).build();
     }
 
+    @GetMapping("exceptionTest")
+    public CommonResponse exceptionTest() throws Exception {
+        if (true) {
+            throw new Exception("exceptionTest");
+        }
+        return CommonResponse.builder().code(ResponseCodeEnum.SUCCESS).data(billConfigService.list()).build();
+    }
+
+
 }

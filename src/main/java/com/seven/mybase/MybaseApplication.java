@@ -7,9 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-@MapperScan("com.seven.mybase.mapper")
+@MapperScan({"com.seven.mybase.mapper", "com.seven.mybase.configer"})
 public class MybaseApplication {
-    private static Logger logger = LoggerFactory.getLogger(MybaseApplication.class);
+    private static final Logger logger = LoggerFactory.getLogger(MybaseApplication.class);
 
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();

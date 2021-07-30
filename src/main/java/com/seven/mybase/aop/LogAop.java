@@ -20,7 +20,7 @@ public class LogAop {
 
 
     @Around("log()")
-    public Object doAround(ProceedingJoinPoint pjp) {
+    public Object doAround(ProceedingJoinPoint pjp) throws Throwable {
         String methodName = pjp.getSignature().getName();
         String className = pjp.getTarget().getClass().getName();
 
@@ -44,6 +44,7 @@ public class LogAop {
             log.info("调用结束>>>" + className + "." + methodName + ",结果:" + argsStr + ",耗时:" + (endTime - startTime));
         } catch (Throwable e) {
             log.error("打印参数出错", e);
+            throw e;
         }
         return res;
     }
